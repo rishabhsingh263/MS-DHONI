@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MS DHONI — The Chronicles of Captain Cool | Interactive Scrollytelling</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Subtle Film Grain Overlay for sports documentary texture -->
+  <div class="film-grain-overlay"></div>
+
+  <!-- Ambient Stadium Lighting & Floodlights -->
+  <div class="stadium-ambient"></div>
+
+  <!-- Global Reading / Scroll Progress Bar -->
+  <div class="scroll-progress-container">
+    <div class="scroll-progress-bar" id="scrollProgressBar"></div>
+  </div>
+
+  <!-- Navigation & Control Header -->
+  <header class="site-header">
+    <a href="#hero" class="brand">
+      <div class="jersey-badge">7</div>
+      <div class="brand-text">
+        <h1>MS DHONI</h1>
+        <span>CAPTAIN COOL CHRONICLES</span>
+      </div>
+    </a>
+    <div class="header-controls">
+      <button class="sound-toggle" id="soundToggleBtn" aria-label="Toggle Sound Effects">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+          <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <span class="btn-label">Sound: OFF</span>
+      </button>
+      <a href="#gallerySection" class="pill-btn">Photo Archives</a>
+      <a href="#tributeSection" class="pill-btn" style="border-color:var(--csk-gold); color:var(--csk-gold);">Salute #7</a>
+    </div>
+  </header>
+
+  <!-- Side Navigation Chapter Rail (Desktop) -->
+  <nav class="chapter-nav-rail" aria-label="Chapter Navigation">
+    <div class="nav-dot-wrapper">
+      <div class="nav-dot active" data-target="chapter-1"></div>
+      <span class="nav-tooltip">Ch. 1: Platform 8, Kharagpur (2001)</span>
+    </div>
+    <div class="nav-dot-wrapper">
+      <div class="nav-dot" data-target="chapter-2"></div>
+      <span class="nav-tooltip">Ch. 2: The 183* Carnage (2005)</span>
+    </div>
+    <div class="nav-dot-wrapper">
+      <div class="nav-dot" data-target="chapter-3"></div>
+      <span class="nav-tooltip">Ch. 3: Johannesburg Gamble (2007)</span>
+    </div>
+    <div class="nav-dot-wrapper">
+      <div class="nav-dot" data-target="chapter-4"></div>
+      <span class="nav-tooltip">Ch. 4: Immortal Six Wankhede (2011)</span>
+    </div>
+    <div class="nav-dot-wrapper">
+      <div class="nav-dot" data-target="chapter-5"></div>
+      <span class="nav-tooltip">Ch. 5: 0.08s Lightning Gloves</span>
+    </div>
+    <div class="nav-dot-wrapper">
+      <div class="nav-dot" data-target="chapter-6"></div>
+      <span class="nav-tooltip">Ch. 6: Dhoni Review System (DRS)</span>
+    </div>
+    <div class="nav-dot-wrapper">
+      <div class="nav-dot" data-target="chapter-7"></div>
+      <span class="nav-tooltip">Ch. 7: CSK Thala Dynasty</span>
+    </div>
+    <div class="nav-dot-wrapper">
+      <div class="nav-dot" data-target="chapter-8"></div>
+      <span class="nav-tooltip">Ch. 8: 19:29 Hours Farewell</span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-editorial-badge">
+      <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background:var(--india-cyan);"></span>
+      SPECIAL SPORTS DOCUMENTARY FEATURE
+    </div>
+    
+    <h1 class="hero-title">
+      MAHENDRA SINGH <span class="gold-accent">DHONI</span>
+    </h1>
+
+    <div class="hero-portrait-frame">
+      <img src="assets/dhoni_portrait.jpg" alt="Mahendra Singh Dhoni" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/c/c9/MS_Dhoni.jpg'">
+    </div>
+
+    <p class="hero-subtitle">
+      From punching tickets in cold foggy railway shifts at Kharagpur to hoisting all three ICC World Trophies into the night sky. The definitive interactive chronicle of cricket's ultimate tactician.
+    </p>
+
+    <!-- Key Legacy Numbers -->
+    <div class="hero-stats-ribbon">
+      <div class="ribbon-item">
+        <span class="num">3</span>
+        <span class="lbl">ICC White-Ball Trophies</span>
+      </div>
+      <div class="ribbon-item">
+        <span class="num">10,773</span>
+        <span class="lbl">ODI Career Runs</span>
+      </div>
+      <div class="ribbon-item">
+        <span class="num">0.08s</span>
+        <span class="lbl">Record Stumping Speed</span>
+      </div>
+      <div class="ribbon-item">
+        <span class="num">102.7</span>
+        <span class="lbl">Average in Won Chases</span>
+      </div>
+      <div class="ribbon-item">
+        <span class="num">5</span>
+        <span class="lbl">IPL Titles as Captain</span>
+      </div>
+    </div>
+
+    <div class="scroll-prompt" onclick="document.querySelector('.scrolly-container').scrollIntoView({behavior:'smooth'})">
+      <span>Scroll To Begin The Story</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Core Scrollytelling Section -->
+  <main class="scrolly-container">
+
+    <!-- Left Column: Editorial Story Cards with Authentic Images -->
+    <div class="narrative-col">
+
+      <!-- CHAPTER 1: KHARAGPUR -->
+      <article class="narrative-step active" data-chapter="chapter-1">
+        <div class="story-card">
+          <div class="card-media-banner">
+            <img src="assets/dhoni_portrait.jpg" alt="Young MS Dhoni Railway Days" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/c/c9/MS_Dhoni.jpg'">
+            <div class="media-badge-tag">Kharagpur Jn. &bull; 2001</div>
+          </div>
+          <div class="chapter-badge">
+            <span>Chapter 01</span>
+            <span class="chapter-year">/ 2001 - 2003</span>
+          </div>
+          <h2>Platform No. 8, Kharagpur</h2>
+          <p>
+            Before billion-heart expectations and World Cup glory, young Mahendra Singh Dhoni was a South Eastern Railway Travelling Ticket Examiner (TTE) stationed at Kharagpur Junction.
+          </p>
+          <p>
+            He wore a black coat, checked tickets under freezing platform floodlights, and played midnight tennis-ball cricket tournaments just to face pace bowling. His father Paan Singh wanted job security; Dhoni had a fire that government ledgers could never contain.
+          </p>
+          <div class="story-quote">
+            "You cannot board two trains travelling in opposite directions. You either accept the safety of the platform or jump on the express to your dreams."
+            <cite>— MS Dhoni, on quitting Indian Railways in 2003</cite>
+          </div>
+          <div class="key-stats-grid">
+            <div class="stat-chip">
+              <span class="val">₹2,800</span>
+              <span class="desc">Monthly TTE Salary</span>
+            </div>
+            <div class="stat-chip">
+              <span class="val">Platform 8</span>
+              <span class="desc">Where He Held The Dream</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHAPTER 2: 183* IN JAIPUR -->
+      <article class="narrative-step" data-chapter="chapter-2">
+        <div class="story-card">
+          <div class="card-media-banner">
+            <img src="assets/dhoni_batting.jpg" alt="Dhoni Brutal Batting Carnage 183*" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/1/16/Mahendra_Singh_Dhoni_batting.JPG'">
+            <div class="media-badge-tag">SMS Stadium, Jaipur &bull; 2005</div>
+          </div>
+          <div class="chapter-badge">
+            <span>Chapter 02</span>
+            <span class="chapter-year">/ 2004 - 2005</span>
+          </div>
+          <h2>The Lion With Long Locks: 183*</h2>
+          <p>
+            After a duck on debut in Bangladesh, Sourav Ganguly took a gamble and sent Dhoni at No. 3 against Pakistan in Vizag. He smashed 148.
+          </p>
+          <p>
+            Months later in Jaipur, chasing Sri Lanka's 299, Dhoni pulverized Muttiah Muralitharan and Chaminda Vaas with <strong>183* off 145 balls</strong>, blasting 10 monster sixes. The bottom-hand whip that tennis-ball cricket gave him produced the terrifying "Helicopter Shot".
+          </p>
+          <div class="story-quote">
+            "I saw lots of people with long hair, but Dhoni's look is iconic. Even Pakistani President Pervez Musharraf famously told him: 'Don't get a haircut!'"
+            <cite>— Ravi Shastri on Dhoni's 2005 arrival</cite>
+          </div>
+          <div class="key-stats-grid">
+            <div class="stat-chip">
+              <span class="val">183*</span>
+              <span class="desc">World Record WK Score</span>
+            </div>
+            <div class="stat-chip">
+              <span class="val">10 Sixes</span>
+              <span class="desc">In A Single Innings</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHAPTER 3: JOHANNESBURG 2007 -->
+      <article class="narrative-step" data-chapter="chapter-3">
+        <div class="story-card">
+          <div class="card-media-banner">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/MS_Dhoni_in_2011.jpg" alt="Dhoni Captaining Young India" onerror="this.src='assets/dhoni_portrait.jpg'">
+            <div class="media-badge-tag">Wanderers Stadium, Joburg &bull; 2007</div>
+          </div>
+          <div class="chapter-badge">
+            <span>Chapter 03</span>
+            <span class="chapter-year">/ September 2007</span>
+          </div>
+          <h2>Johannesburg: The 13-Run Gamble</h2>
+          <p>
+            When Sachin, Sourav, and Rahul opted out of the inaugural 2007 T20 World Cup, a 26-year-old Dhoni led a team of fearless youngsters to South Africa.
+          </p>
+          <p>
+            In the nail-biting final against Pakistan with 13 needed off 6 balls, Dhoni overlooked seasoned Harbhajan Singh and tossed the ball to gentle-medium pacer Joginder Sharma. On ball 4, Misbah scooped... and Sreesanth held on. The myth of "Captain Cool" was cast in stone.
+          </p>
+          <div class="story-quote">
+            "Joginder, you have bowled thousands of balls in domestic cricket. Bowl this with your heart. If we lose, I take all the blame."
+            <cite>— Dhoni's pre-over instructions to Joginder</cite>
+          </div>
+          <div class="key-stats-grid">
+            <div class="stat-chip">
+              <span class="val">26 Yrs</span>
+              <span class="desc">Youngest ICC Trophy Captain</span>
+            </div>
+            <div class="stat-chip">
+              <span class="val">5 Runs</span>
+              <span class="desc">Historic Victory Margin</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHAPTER 4: 2011 WORLD CUP FINAL -->
+      <article class="narrative-step" data-chapter="chapter-4">
+        <div class="story-card">
+          <div class="card-media-banner">
+            <img src="assets/dhoni_batting.jpg" alt="Dhoni Wankhede 2011 Final Six" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/1/16/Mahendra_Singh_Dhoni_batting.JPG'">
+            <div class="media-badge-tag">Wankhede, Mumbai &bull; 02 April 2011</div>
+          </div>
+          <div class="chapter-badge">
+            <span>Chapter 04</span>
+            <span class="chapter-year">/ April 2, 2011</span>
+          </div>
+          <h2>Wankhede: The Immortal Six</h2>
+          <p>
+            28 long years since Kapil Dev in 1983. In the final against Sri Lanka chasing 275, India sat nervous at 114/3. Dhoni made the ultimate tactical call: promoting himself ahead of tournament hero Yuvraj Singh to counter Sri Lanka's spinners.
+          </p>
+          <p>
+            At 48.2 overs, 4 runs needed. Nuwan Kulasekara bowled full. Dhoni coiled, uncorked the helicopter swing, and froze in follow-through as the ball soared 108 meters into the roaring Mumbai night sky.
+          </p>
+          <div class="story-quote">
+            "Dhoni finishes off in style. A magnificent strike into the crowd! India lift the World Cup after 28 years! The party's started in the dressing room, and it's an Indian captain who's been absolutely magnificent!"
+            <cite>— Ravi Shastri's unforgettable words</cite>
+          </div>
+          <div class="key-stats-grid">
+            <div class="stat-chip">
+              <span class="val">91* (79)</span>
+              <span class="desc">Man of the World Cup Final</span>
+            </div>
+            <div class="stat-chip">
+              <span class="val">108m</span>
+              <span class="desc">Winning Six Distance</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHAPTER 5: 0.08 SECONDS REFLEX -->
+      <article class="narrative-step" data-chapter="chapter-5">
+        <div class="story-card">
+          <div class="card-media-banner">
+            <img src="assets/dhoni_portrait.jpg" alt="Dhoni Behind The Stumps" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/c/c9/MS_Dhoni.jpg'">
+            <div class="media-badge-tag">Glovework Mastery &bull; 80 Milliseconds</div>
+          </div>
+          <div class="chapter-badge">
+            <span>Chapter 05</span>
+            <span class="chapter-year">/ Technique</span>
+          </div>
+          <h2>0.08 Seconds: Faster Than A Blink</h2>
+          <p>
+            A human eye blink takes between 100 and 150 milliseconds. MS Dhoni's fastest recorded stumping took just <strong>80 milliseconds (0.08s)</strong>.
+          </p>
+          <p>
+            Instead of drawing his hands back to cushion the ball like traditional English textbook wicketkeepers, Dhoni absorbed momentum directly above the bails. No-look flicks, leg-deflections, and instantaneous stumpings turned wicketkeeping into an aggressive offensive weapon.
+          </p>
+          <div class="story-quote">
+            "If your back foot lifts even a millimetre off the popping crease, don't look back at the umpire. Just start walking to the pavilion. Dhoni has already dislodged the bails."
+            <cite>— Adam Gilchrist on Dhoni's glove speed</cite>
+          </div>
+          <div class="key-stats-grid">
+            <div class="stat-chip">
+              <span class="val">829</span>
+              <span class="desc">International Dismissals</span>
+            </div>
+            <div class="stat-chip">
+              <span class="val">195</span>
+              <span class="desc">ODI Stumpings (World Record)</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHAPTER 6: DRS (DHONI REVIEW SYSTEM) -->
+      <article class="narrative-step" data-chapter="chapter-6">
+        <div class="story-card">
+          <div class="card-media-banner">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/MS_Dhoni_2.jpg" alt="Dhoni The Master Tactician" onerror="this.src='assets/dhoni_portrait.jpg'">
+            <div class="media-badge-tag">Psychological Mastery &bull; DRS Authority</div>
+          </div>
+          <div class="chapter-badge">
+            <span>Chapter 06</span>
+            <span class="chapter-year">/ Mastermind</span>
+          </div>
+          <h2>The "Dhoni Review System" (DRS)</h2>
+          <p>
+            Technically known as the Decision Review System, cricket fans and commentators universally dubbed it the <strong>"Dhoni Review System"</strong> because of Dhoni’s uncanny 95%+ success rate.
+          </p>
+          <p>
+            While other captains burned reviews in desperation, Dhoni only signaled the 'T' with his wrists when he had already tracked the trajectory, point of impact, and pitch angle with laser precision. Umpires knew that if Dhoni reviewed, their decision was almost certainly doomed.
+          </p>
+          <div class="story-quote">
+            "When Dhoni takes a review, even the bowler stops celebrating. Everyone knows he has already seen the Hawk-Eye in his mind."
+            <cite>— Michael Holding</cite>
+          </div>
+          <div class="key-stats-grid">
+            <div class="stat-chip">
+              <span class="val">102.71</span>
+              <span class="desc">Batting Avg in Won Chases</span>
+            </div>
+            <div class="stat-chip">
+              <span class="val">>92%</span>
+              <span class="desc">DRS Accuracy Rating</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHAPTER 7: CSK THALA -->
+      <article class="narrative-step" data-chapter="chapter-7">
+        <div class="story-card">
+          <div class="card-media-banner">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg" alt="MS Dhoni CSK Thala" onerror="this.src='assets/dhoni_portrait.jpg'">
+            <div class="media-badge-tag">Chepauk, Chennai &bull; Thala Dynasty</div>
+          </div>
+          <div class="chapter-badge">
+            <span>Chapter 07</span>
+            <span class="chapter-year">/ 2008 - Present</span>
+          </div>
+          <h2>Whistle Podu: The CSK Dynasty</h2>
+          <p>
+            A North Indian boy from the mining state of Jharkhand became the supreme adopted king of Tamil Nadu: <strong>"Thala"</strong>.
+          </p>
+          <p>
+            Under his leadership, Chennai Super Kings became the gold standard of world franchise cricket: <strong>5 IPL Trophies, 10 Finals, and 12 Playoffs</strong> in 14 appearances. When Dhoni walks onto the Chepauk turf, stadium decibel meters clock over <strong>120 dB</strong> — the roar of a roaring jet engine.
+          </p>
+          <div class="story-quote">
+            "Ranchi is where my body was born. But Chennai is where my soul belongs."
+            <cite>— MS Dhoni at the Chepauk fortress</cite>
+          </div>
+          <div class="key-stats-grid">
+            <div class="stat-chip">
+              <span class="val">5 Rings</span>
+              <span class="desc">2010, 2011, 2018, 2021, 2023</span>
+            </div>
+            <div class="stat-chip">
+              <span class="val">10 Finals</span>
+              <span class="desc">Most in Tournament History</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- CHAPTER 8: FAREWELL -->
+      <article class="narrative-step" data-chapter="chapter-8">
+        <div class="story-card">
+          <div class="card-media-banner">
+            <img src="assets/dhoni_padma.jpg" alt="Dhoni In Army Uniform with Padma Bhushan" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/76/Mahendra_Singh_Dhoni_receiving_Padma_Bhushan.jpg'">
+            <div class="media-badge-tag">15 August 2020 &bull; 19:29 IST</div>
+          </div>
+          <div class="chapter-badge">
+            <span>Chapter 08</span>
+            <span class="chapter-year">/ August 15, 2020</span>
+          </div>
+          <h2>19:29 Hours: "Consider Me as Retired"</h2>
+          <p>
+            No farewell match in front of 100,000 spectators. No press conference. No victory lap on the shoulders of teammates.
+          </p>
+          <p>
+            On India's 74th Independence Day at exactly 19:29 IST, Honorary Lieutenant Colonel MS Dhoni posted an unpolished 4-minute montage set to Mukesh’s <em>"Main Pal Do Pal Ka Shaayar Hoon"</em>. Just a single sentence: <em>"from 1929 hrs consider me as Retired."</em> An era concluded as quietly as it began on platform 8 at Kharagpur.
+          </p>
+          <div class="story-quote">
+            "Thanks a lot for ur love and support throughout.from 1929 hrs consider me as Retired."
+            <cite>— MS Dhoni's final international message</cite>
+          </div>
+          <div class="key-stats-grid">
+            <div class="stat-chip">
+              <span class="val">332 Matches</span>
+              <span class="desc">As International Captain</span>
+            </div>
+            <div class="stat-chip">
+              <span class="val">Lt. Colonel</span>
+              <span class="desc">Indian Territorial Army</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Right Column: Interactive Visual Stage -->
+    <div class="stage-col">
+      <div class="sticky-stage">
+
+        <!-- STAGE 1: Kharagpur Ticket -->
+        <div class="stage-layer active" data-layer="chapter-1">
+          <div class="layer-header">
+            <span class="layer-title">TTE Station Artifact (2001)</span>
+            <span class="layer-indicator">KHARAGPUR JN</span>
+          </div>
+
+          <div class="ticket-container">
+            <div class="railway-ticket" id="railwayTicketBody">
+              <div class="ticket-header-strip">
+                <img src="assets/dhoni_portrait.jpg" class="ticket-photo-thumb" alt="TTE ID Photo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/c/c9/MS_Dhoni.jpg'">
+                <div>
+                  <h4>SOUTH EASTERN RAILWAY</h4>
+                  <div style="font-size:0.7rem; color:#78350f;">KHARAGPUR DIVISION &bull; BADGE #007</div>
+                </div>
+              </div>
+              <div class="ticket-row">
+                <span>STATION: KHARAGPUR (PF 8)</span>
+                <span>TRAIN: 12841 HOWRAH EXP</span>
+              </div>
+              <div class="ticket-row">
+                <span>NAME: M.S. DHONI</span>
+                <span>DESIG: TTE / SER</span>
+              </div>
+              <div class="ticket-row">
+                <span>CLASS: 2A / SLEEPER</span>
+                <span>FARE: ₹280.00</span>
+              </div>
+              <div class="ticket-stamp">VERIFIED BY TTE</div>
+            </div>
+
+            <div class="punch-interactive-row">
+              <button class="punch-btn" id="punchTicketBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+                Punch Ticket #07
+              </button>
+              <span id="punchCount" style="font-size:0.85rem; color:var(--text-muted); font-weight:700;">0 punched</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: Wagon Wheel 183* -->
+        <div class="stage-layer" data-layer="chapter-2">
+          <div class="layer-header">
+            <span class="layer-title">183* vs Sri Lanka (Jaipur 2005)</span>
+            <span class="layer-indicator">145 BALLS / 10 SIXES</span>
+          </div>
+
+          <div class="wagon-wheel-wrapper">
+            <svg class="cricket-ground-svg" id="wagonWheelSvg" viewBox="0 0 300 300">
+              <circle cx="150" cy="150" r="135" fill="none" stroke="rgba(16, 185, 129, 0.35)" stroke-width="2"></circle>
+              <circle cx="150" cy="150" r="75" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-dasharray="4 4" stroke-width="1.5"></circle>
+              <rect x="146" y="130" width="8" height="40" fill="#fef08a" rx="2"></rect>
+            </svg>
+            <div class="shot-tooltip" id="shotTooltip">Hover over rays to see shot details</div>
+          </div>
+          <div style="font-size:0.75rem; color: #94a3b8; text-align:center; margin-top:0.4rem;">
+            <span style="color:#fdb913; font-weight:bold;">Gold rays</span> = Sixes (up to 112m) &bull; <span style="color:#00d2ff; font-weight:bold;">Cyan rays</span> = Fours
+          </div>
+        </div>
+
+        <!-- STAGE 3: 2007 Joginder Final Over -->
+        <div class="stage-layer" data-layer="chapter-3">
+          <div class="layer-header">
+            <span class="layer-title">Johannesburg 2007: Over 19.4</span>
+            <span class="layer-indicator">13 TO WIN / MISBAH ON STRIKE</span>
+          </div>
+
+          <div class="over-simulator">
+            <div class="balls-track">
+              <button class="ball-node" data-ball-index="0">1</button>
+              <button class="ball-node" data-ball-index="1">2</button>
+              <button class="ball-node" data-ball-index="2">3</button>
+              <button class="ball-node wickets active" data-ball-index="3">W</button>
+            </div>
+
+            <div class="over-commentary-box">
+              <span class="over-event-badge" id="overEventBadge" style="background:#10b981; color:#fff;">
+                IN THE AIR... SREESANTH TAKES IT!
+              </span>
+              <p class="over-desc" id="overDesc">
+                Misbah tries the scoop! Miscues to short fine leg. Sreesanth takes the catch! INDIA WIN THE INAUGURAL T20 WORLD CUP!
+              </p>
+            </div>
+            <p style="font-size:0.75rem; color:#64748b;">Click balls 1 to W above to re-live the drama.</p>
+          </div>
+        </div>
+
+        <!-- STAGE 4: Helicopter Shot Canvas -->
+        <div class="stage-layer" data-layer="chapter-4">
+          <div class="layer-header">
+            <span class="layer-title">Wankhede Stadium: 48.2 Overs</span>
+            <span class="layer-indicator">4 RUNS NEEDED</span>
+          </div>
+
+          <div class="helicopter-stage-box">
+            <div class="canvas-container">
+              <canvas id="helicopterCanvas"></canvas>
+            </div>
+
+            <div class="shastri-quote-ticker">
+              <p>"Dhoni finishes off in style. A magnificent strike into the crowd!"</p>
+              <span>— Ravi Shastri &bull; 02 April 2011</span>
+            </div>
+
+            <button class="pill-btn" id="replayHeliBtn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M23 4v6h-6"></path>
+                <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+              </svg>
+              Replay Winning Six
+            </button>
+          </div>
+        </div>
+
+        <!-- STAGE 5: 0.08s Stumping Mini-Game -->
+        <div class="stage-layer" data-layer="chapter-5">
+          <div class="layer-header">
+            <span class="layer-title">Reflex Test: 0.08s Stumping</span>
+            <span class="layer-indicator">RECORD: 80ms</span>
+          </div>
+
+          <div class="stumping-game-box">
+            <div class="crease-visual">
+              <div class="white-crease-line"></div>
+              <svg width="90" height="90" viewBox="0 0 100 100" class="stumps-svg-group">
+                <rect x="30" y="30" width="8" height="60" fill="#fef08a" rx="2"></rect>
+                <rect x="46" y="30" width="8" height="60" fill="#fef08a" rx="2"></rect>
+                <rect x="62" y="30" width="8" height="60" fill="#fef08a" rx="2"></rect>
+                <g id="bailsSvgGroup">
+                  <rect x="28" y="24" width="24" height="5" fill="#f97316" rx="2"></rect>
+                  <rect x="48" y="24" width="24" height="5" fill="#f97316" rx="2"></rect>
+                </g>
+              </svg>
+            </div>
+
+            <button class="stumping-action-btn" id="startReflexBtn">START REFLEX TEST</button>
+            <button class="stumping-action-btn" id="reflexActionBtn" style="display:none;">WAIT FOR FOOT TO LIFT...</button>
+
+            <div id="reflexResult" style="min-height:48px; font-size:0.95rem; color:var(--text-muted);">
+              Can your reaction speed match 0.08 seconds?
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 6: DRS Simulator (Dhoni Review System) -->
+        <div class="stage-layer" data-layer="chapter-6">
+          <div class="layer-header">
+            <span class="layer-title">Hawk-Eye DRS Telemetry</span>
+            <span class="layer-indicator">DHONI REVIEW SYSTEM</span>
+          </div>
+
+          <div class="drs-container">
+            <div class="drs-screen">
+              <div class="drs-screen-header">
+                <span>HAWK-EYE 3D TRACKING</span>
+                <span id="drsScreenStatus" style="color:var(--csk-gold);">READY FOR REVIEW</span>
+              </div>
+              <div class="ultraedge-wave">
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+                <div class="edge-bar"></div>
+              </div>
+              <div class="drs-verdict-banner" id="drsVerdictBanner">OUT</div>
+            </div>
+
+            <button class="pill-btn" id="triggerDrsBtn" style="background:linear-gradient(135deg, var(--india-cyan), #0284c7); color:#000; font-family:var(--font-editorial); font-size:1.15rem; padding:0.8rem 1.8rem;">
+              SIGNAL DRS REVIEW [ T ]
+            </button>
+            <p style="font-size:0.75rem; color:#64748b;">
+              Simulate Dhoni's 95%+ success rate against umpire calls.
+            </p>
+          </div>
+        </div>
+
+        <!-- STAGE 7: CSK Whistle Podu -->
+        <div class="stage-layer" data-layer="chapter-7">
+          <div class="layer-header">
+            <span class="layer-title">Chennai Super Kings Empire</span>
+            <span class="layer-indicator">5X IPL CHAMPIONS</span>
+          </div>
+
+          <div class="csk-dynasty-box">
+            <div class="trophy-rings-row">
+              <button class="ring-badge" data-year="2010">🏆 2010</button>
+              <button class="ring-badge" data-year="2011">🏆 2011</button>
+              <button class="ring-badge" data-year="2018">🏆 2018</button>
+              <button class="ring-badge" data-year="2021">🏆 2021</button>
+              <button class="ring-badge active" data-year="2023">🏆 2023</button>
+            </div>
+
+            <div id="ringInfoBox" style="font-size:0.85rem; color:#f1f5f9; background:rgba(255,255,255,0.05); padding:0.8rem 1rem; border-radius:10px; width:100%;">
+              <strong>IPL 2023 Champion:</strong> The 3 AM thriller in Ahmedabad! Ravindra Jadeja hits 10 off 2 balls; Dhoni lifts Jadeja in iconic celebration.
+            </div>
+
+            <div class="decibel-visualizer">
+              <span style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.1em; display:block; margin-bottom:0.5rem;">
+                Chepauk Stadium Decibel Meter: 120.4 dB
+              </span>
+              <div class="db-meter">
+                <div class="db-bar" style="animation-delay:0.1s;"></div>
+                <div class="db-bar" style="animation-delay:0.3s;"></div>
+                <div class="db-bar" style="animation-delay:0.2s;"></div>
+                <div class="db-bar" style="animation-delay:0.5s;"></div>
+                <div class="db-bar" style="animation-delay:0.4s;"></div>
+                <div class="db-bar" style="animation-delay:0.6s;"></div>
+                <div class="db-bar" style="animation-delay:0.15s;"></div>
+              </div>
+            </div>
+
+            <button class="whistle-btn" id="whistlePoduBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+              </svg>
+              Play Whistle Podu Anthem
+            </button>
+          </div>
+        </div>
+
+        <!-- STAGE 8: 19:29 Hours Farewell -->
+        <div class="stage-layer" data-layer="chapter-8">
+          <div class="layer-header">
+            <span class="layer-title">15 August 2020: Sign-Off</span>
+            <span class="layer-indicator">19:29 IST</span>
+          </div>
+
+          <div class="farewell-box">
+            <div class="clock-1929">19:29</div>
+            <div class="farewell-post-card">
+              <p style="font-style:italic; margin-bottom:0.5rem;">
+                "Thanks a lot for ur love and support throughout.from 1929 hrs consider me as Retired"
+              </p>
+              <span style="font-size:0.75rem; color:var(--csk-gold); font-weight:800;">
+                @mahi7781 &bull; 15 August 2020
+              </span>
+            </div>
+            <p style="font-size:0.75rem; color:#64748b;">
+              Song: <em>Main Pal Do Pal Ka Shaayar Hoon</em> by Mukesh
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Photo Archives Section -->
+  <section class="editorial-gallery-section" id="gallerySection">
+    <div class="section-heading-center">
+      <h2>The Photographic Archives</h2>
+      <p>Historic photographic moments from a 16-year international journey.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="assets/dhoni_portrait.jpg" alt="Dhoni Adelaide Oval" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/c/c9/MS_Dhoni.jpg'">
+        <div class="gallery-caption">
+          <h4>The Calm In The Storm</h4>
+          <span>Adelaide Oval &bull; 2008</span>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/dhoni_batting.jpg" alt="Dhoni Batting" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/1/16/Mahendra_Singh_Dhoni_batting.JPG'">
+        <div class="gallery-caption">
+          <h4>Unleashed Bottom Hand</h4>
+          <span>The Helicopter Strike</span>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="assets/dhoni_padma.jpg" alt="Padma Bhushan in Uniform" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/7/76/Mahendra_Singh_Dhoni_receiving_Padma_Bhushan.jpg'">
+        <div class="gallery-caption">
+          <h4>Lt. Colonel MS Dhoni</h4>
+          <span>Padma Bhushan Ceremony &bull; Rashtrapati Bhavan</span>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/MS_Dhoni_%28Prabhav_%2723_-_RiGI_2023%29.jpg" alt="Dhoni at Event" onerror="this.src='assets/dhoni_portrait.jpg'">
+        <div class="gallery-caption">
+          <h4>The Mind of Thala</h4>
+          <span>Tactical Leadership</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hall of Fame & Tribute Section -->
+  <section class="hall-of-fame-section" id="tributeSection">
+    <div class="section-heading-center">
+      <h2>The Only Captain in Cricket History</h2>
+      <p>To win every major ICC white-ball tournament on earth.</p>
+    </div>
+
+    <!-- ICC Trophy Trio -->
+    <div class="icc-trio-showcase">
+      <div class="trophy-card">
+        <div class="trophy-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+            <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path>
+            <path d="M4 22h16"></path>
+            <path d="M10 14.66V17c0 .55-.45 1-1 1H7v4h10v-4h-2c-.55 0-1-.45-1-1v-2.34"></path>
+            <path d="M18 4H6v7a6 6 0 0 0 12 0V4z"></path>
+          </svg>
+        </div>
+        <h3>2007 ICC T20 World Cup</h3>
+        <p>South Africa &bull; Defeated Pakistan in Johannesburg with an unfancied squad of youth.</p>
+      </div>
+
+      <div class="trophy-card">
+        <div class="trophy-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+        </div>
+        <h3>2011 ICC Cricket World Cup</h3>
+        <p>India &bull; Ended a 28-year wait with the immortal 91* in the Wankhede final.</p>
+      </div>
+
+      <div class="trophy-card">
+        <div class="trophy-icon">
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <h3>2013 ICC Champions Trophy</h3>
+        <p>England &bull; Defeated host England in a rain-curtailed 20-over battle at Edgbaston.</p>
+      </div>
+    </div>
+
+    <!-- Tribute Wall -->
+    <div class="tribute-box">
+      <h3 style="font-family:var(--font-editorial); font-size:2rem; text-align:center; margin-bottom:1.5rem; letter-spacing:0.02em;">
+        WORDS FROM CRICKET LEGENDS & FANS
+      </h3>
+
+      <div class="legend-quotes-carousel" id="userTributesList"></div>
+
+      <!-- Add Your Own Tribute Form -->
+      <form class="user-tribute-form" id="userTributeForm">
+        <input type="text" id="tributeName" placeholder="Your Name or City (e.g. Rahul, Ranchi)" required>
+        <textarea id="tributeMessage" placeholder="Leave your personal salute or favorite Dhoni memory..." required></textarea>
+        <button type="submit" class="pill-btn" style="background:var(--csk-gold); color:#000; border:none; padding:0.85rem 2rem; font-family:var(--font-editorial); font-size:1.15rem;">
+          POST SALUTE TO THALA
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p style="margin-bottom:0.5rem; font-family:var(--font-editorial); font-size:1.25rem; color:#f1f5f9; letter-spacing:0.05em;">
+      "YOU DON’T PLAY FOR THE CROWD, YOU PLAY FOR THE COUNTRY."
+    </p>
+    <p>
+      Designed as a bespoke interactive sports documentary tribute to Mahendra Singh Dhoni (#7).
+    </p>
+  </footer>
+
+  <!-- Scrolly Engine Script -->
+  <script src="app.js"></script>
+</body>
+</html>
